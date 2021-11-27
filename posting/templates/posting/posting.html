@@ -1,0 +1,56 @@
+{% extends 'posting/base.html' %}
+{% block main_area %}
+        <!-- Page content-->
+        <div class="container mt-5" style="height: 500px">
+            <div class="row">
+                <div class="col-lg-4">
+                    <!-- Post content-->
+                    <div style="margin-top: 40px">
+                        <!-- Preview image figure-->
+                        <figure class="mb-4"><img class="img-fluid rounded" src="https://dummyimage.com/600x400/ced4da/6c757d.jpg" alt="..." style="width: 600px; height: 300px" /></figure>
+                        
+                        <div class="container px-4 px-lg-5">
+                            <div class="row gx-4 gx-lg-5 row-cols-1 row-cols-md-2 row-cols-xl-2 justify-content-center">
+                                <button type="button" class="btn btn-outline-light" style="background-color: #f3c677; width: 300px;  margin-top: 20px;">
+                                <i class="bi bi-chevron-left"></i>Image File Choose
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Side widgets-->
+                <div class="col-lg-6" style="margin-left: 30px">
+                    
+                    <!-- Title -->
+                    <h4>기사제목</h4>
+                    <div class="input-group" style="margin-bottom: 20px">
+                        <input class="form-control" type="text"/>
+                    </div>
+
+                    <!-- 신뢰도 -->
+                    <div class="input-group" style="margin-bottom: 20px; width: 200px;">
+                        <h4 style="margin-right: 30px;">신뢰도 </h4>
+                        <input class="form-control" type="number" min="0" max="100" step="5" />
+                    </div>
+
+                    
+                    <!-- news post --> 
+                    <div class="input-group" style="margin-bottom: 20px">
+                        <textarea class="form-control" cols="200" rows="8">기사 내용 입력</textarea>
+                    </div>
+
+                    <!-- buttons -->
+                    <div class="input-group" style="margin-bottom: 20px;">
+                        <button type="button" class="btn btn-outline-light" style="background-color: #f3c677; width: 100px;  margin: 20px;">
+                            <i class="bi bi-chevron-center"></i>취소
+                        </button>
+                        <button type="submit" class="btn btn-outline-light" style="background-color: #f3c677; width: 100px;  margin: 20px;">
+                            <i class="bi bi-chevron-center"></i>작성
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+{% endblock %}

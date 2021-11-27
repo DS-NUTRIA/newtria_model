@@ -1,0 +1,38 @@
+     <!-- Side widgets-->
+                <div class="col-lg-4">
+
+                    <div class="container px-4 px-lg-5">
+                        <div class="row gx-4 gx-lg-5 row-cols-1 row-cols-md-2 row-cols-xl-2 justify-content-center">
+                            <a class="btn btn-outline-light" href="/posting/" style="background-color: #f3c677; width: 500px;  margin: 20px;">
+                        <i class="bi bi-chevron-left"></i>Back to the List
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="card mb-4">
+                  <div class="card-header"><i class="fas fa-search"></i>&nbsp;&nbsp;Search</div>
+                  <div class="card-body">
+                      <div class="input-group">
+                          <input class="form-control" type="text" placeholder="Enter search term..." aria-label="Enter search term..." aria-describedby="button-search" />
+                          <button class="btn btn-primary" id="button-search" type="button">Go!</button>
+                      </div>
+                  </div>
+                </div>
+              <!-- Categories widget-->
+              <div class="card mb-4" id="categories-card">
+                  <div class="card-header">Categories</div>
+                  <div class="card-body">
+                      <div class="row">
+                          <div>
+                              <ul>
+                                  {% for c in categories %}
+                                    <li><a href="{{ c.get_absolute_url }}">{{c}} ({{c.post_set.count}})</a></li>
+                                  {% endfor %}
+                                  <li><a href="http://127.0.0.1:8000/blog/category/no_category">미분류 ({{no_category_post_count}})</a></li>
+                              </ul>
+                          </div>
+
+                      </div>
+                  </div>
+              </div>
+            </div>

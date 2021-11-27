@@ -1,0 +1,39 @@
+{% extends 'posting/base.html' %}
+{% block main_area %}
+        <section >
+              
+            <div style="z-index: 3;">
+                <div class="container text-center">
+                    <a class="welcome" href="#!">
+                        <img src="img/welcome_white.png" style="height:200px" alt="welcome">
+                    </a>
+                </div>
+
+                <div class="container col-sm-3 col-md-3 col-lg-3">
+                    <form role="form">
+                        <div class="form-group mb-3">
+                            <label for="signup_email" style="font-weight: bold; color: white;">Email address</label>
+                            <input type="text" class="form-control" id="signup_email" placeholder="ex) nutria@gmail.com">
+                        </div>
+                        <div class="form-group mb-3">
+                            <label for="signup_password" style="font-weight: bold; color: white;"> Password</label>
+                            <input type="text" class="form-control" id="signup_password" placeholder="8자 이상, 글자와 숫자, 특수기호 포함">
+                        </div>
+                        <div class="form-group mb-3">
+                            <label for="signup_name" style="font-weight: bold; color: white;">Name</label>
+                            <input type="text" class="form-control" id="signup_name" placeholder="ex) 홍길동">
+                        </div>
+                        
+                        <div class="form-group text-center">
+                            <button type="button" class="btn mb-2" style="width: 100%; background-color: #B33F62; color: white">
+                                Sign Up
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            
+
+        </section>
+{% endblock %}

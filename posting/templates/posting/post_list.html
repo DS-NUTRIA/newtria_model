@@ -1,0 +1,54 @@
+{% extends 'posting/base.html' %}
+{% block main_area %}
+        <!-- Section-->
+        <section class="py-5">
+            <div class="container px-4 px-lg-5 mt-2">
+                <div class="row gx-4 gx-lg-5 row-cols-1 row-cols-md-2 row-cols-xl-2 justify-content-center">
+                  {% if post_list.exists %}
+                  {% for p in post_list %}
+                    <div class="col mb-3">
+                        <div class="card h-70 border-secondary shadow p-3 mb-5 bg-white rounded">
+                            <!-- Product image-->
+                            {% if p.head_image %}
+                            <img class="card-img-top" src="{{ p.head_image.url }}" alt="..." />
+                            {% else %}
+                            <img class="card-img-top" src="https://picsum.photos/seed/{{ p.id }}/800/200" alt="random_image">
+                            {% endif %}
+                            <div class="progress">
+                                <div class="progress-bar" style="width: {{p.reliability}}%">Reliability: {{p.reliability}}%</div>
+                            </div>
+                            <!-- Product details-->
+                            <div>
+                                {% if p.category %}
+                                    <span class="badge bg-secondary float-right">{{p.category}}</span>
+                                {% endif %}
+                            </div>
+
+                                    <!-- article title-->
+                                    <h5 class="fw-bolder">{{ p.title }}</h5>
+                                    <!-- article content-->
+                                    {{ p.content }}
+
+                            <a class="btn btn-primary" href="{{ p.get_absolute_url }}">Read more →</a>
+                    </div>
+                    </div>
+              {% endfor %}
+                  {% else %}
+                  <h2>아직 게시물이 없습니다.</h2>
+              {% endif %}
+                </div>
+            </div>
+
+
+  <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 row-cols-1 row-cols-md-2 row-cols-xl-2 justify-content-center">
+                    <button type="button" class="btn btn-outline-light" style="background-color: #f3c677; width: 30%;">
+                        <i class="bi bi-chevron-left"></i>prev
+                    </button>
+                    <button type="button" class="btn btn-outline-light" style="background-color: #f3c677; width: 30%;">
+                        next<i class="bi bi-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+{% endblock %}

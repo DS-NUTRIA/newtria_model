@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Newtria</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/lock.ico" />
+        <!-- Bootstrap icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="{% static 'posting/css/styles.css' %}" rel="stylesheet" type="text/css" media="screen">
+        <style>
+            .entile_back{
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                background: url("img/newspaper_background.jpg");
+                background-size: cover;
+                z-index: 1;
+            }
+            .entile_back::after{
+                content: "";
+                opacity: 0.5;
+                position: absolute;
+                top: 0px;
+                left: 0px;
+                right: 0px;
+                bottom: 0px;
+                background-color: #000;
+                z-index: -1;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- Navigation-->
+    {% include 'posting/navbar.html' %}
+
+                          <!-- 모듈화/블럭 -->
+          <div class="container mt-5">
+            <div class="row">
+                  {% block main_area %}
+                  {% endblock %}
+            </div>
+          </div>
+
+
+    </body>
+
+
+    {% include 'posting/footer.html' %}
+
+
+</html>
