@@ -30,9 +30,9 @@
                     <form class="d-grid gap-2 d-md-block">
 
                         {% if user.is_authenticated %}
-                        <button class="btn" style="background-color: #3498db; color:white;" type="submit" value="MyPage">
+                        <a class="btn" style="background-color: #3498db; color:white;" type="submit" value="MyPage" href="posting/mypage/">
                             My Page
-                        </button>
+                        </a>
                         <a class="btn" style="background-color: #E0E0E0; color:#494949;" href="{% url 'account_logout' %}"type="submit" value="SignUp">
                             Log out
                         </a>

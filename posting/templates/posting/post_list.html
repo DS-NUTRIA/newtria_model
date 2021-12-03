@@ -39,16 +39,28 @@
                 </div>
             </div>
 
-
-  <div class="container px-4 px-lg-5">
-                <div class="row gx-4 gx-lg-5 row-cols-1 row-cols-md-2 row-cols-xl-2 justify-content-center">
-                    <button type="button" class="btn btn-outline-light" style="background-color: #f3c677; width: 30%;">
-                        <i class="bi bi-chevron-left"></i>prev
-                    </button>
-                    <button type="button" class="btn btn-outline-light" style="background-color: #f3c677; width: 30%;">
-                        next<i class="bi bi-chevron-right"></i>
-                    </button>
-                </div>
-            </div>
+<!-- Pagination-->
+ {% if is_paginated %}
+      <ul class="pagination justify-content-center my-4">
+          {% if page_obj.has_previous %}
+          <li class="page-item">
+              <a class="page-link" href="?page={{page_obj.previous_page_number}}" tabindex="-1" aria-disabled="true">&larr; Newer</a>
+          </li>
+          {% else %}
+          <li class="page-item disabled">
+              <a class="page-link" href="#" tabindex="-1" aria-disabled="true">&larr; Newer</a>
+          </li>
+          {% endif %}
+          {% if page_obj.has_next %}
+          <li class="page-item">
+              <a class="page-link" href="?page={{page_obj.next_page_number}}">Older &rarr;</a>
+          </li>
+          {% else %}
+          <li class="page-item disabled" >
+              <a class="page-link" href="#!">Older &rarr;</a>
+          </li>
+          {% endif %}
+      </ul>
+    {% endif %}
         </section>
 {% endblock %}

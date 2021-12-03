@@ -9,10 +9,13 @@ from django.core.exceptions import PermissionDenied
 from django.utils.text import slugify
 
 # Create your views here.
+def Mypage(request):
+    return render(request,'posting/mypage.html')
 
 class PostList(ListView):
     model = Post
     ordering = '-pk'
+    paginate_by = 6
 
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super(PostList, self).get_context_data()
