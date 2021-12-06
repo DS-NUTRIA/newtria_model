@@ -10,7 +10,7 @@
                         <div class="card h-70 border-secondary shadow p-3 mb-5 bg-white rounded">
                             <!-- Product image-->
                             {% if p.head_image %}
-                            <img class="card-img-top" src="{{ p.head_image.url }}" alt="..." />
+                            <img class="card-img-top" width="800px" height="150px" src="{{ p.head_image.url }}" alt="..." />
                             {% else %}
                             <img class="card-img-top" src="https://picsum.photos/seed/{{ p.id }}/800/200" alt="random_image">
                             {% endif %}

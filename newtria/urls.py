@@ -24,3 +24,5 @@ urlpatterns = [
     path('accounts/', include('allauth.urls')),
     path('',include('posting.urls')),
 ]
+
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)  # 서버 IP/media
